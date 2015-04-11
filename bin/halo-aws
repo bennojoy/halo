@@ -1,0 +1,101 @@
+#!/usr/bin/env python
+import optparse
+from halo.aws.halo_aws import *
+import halo.aws.halo_aws
+import halo.aws.constants
+from halo.aws.halo_errors import halo_error
+try:
+    from troposphere import Parameter, Ref, Tags, Template, GetAtt, Join, Output
+except ImportError:
+    sys.stderr.write("troposhere python module not found")
+    sys.exit(1)
+
+if __name__ == "__main__":
+
+
+    parser = optparse.OptionParser()
+    parser.add_option('-p', '--parameters', dest='params', default='',
+                                          metavar='KEY=VALUE or @PARAM_FILE')
+    parser.add_option('-v', '--verbose', action="store_true", dest='verbose', default=False)
+    opts, args = parser.parse_args()
+    if not args:
+        halo_error("we need the template yaml file to be specified as the paramter \n")
+
+    if opts.params:
+        params = opts.params
+        if params.startswith('@'):
+            fname = params.split('@')[1]
+            vars = load_yaml_from_file(fname)
+        else:
+            try:
+                vars = dict(token.split('=') for token in shlex.split(params))
+            except Exception as e:
+                halo_error("Seems like paramters are not specified properly, it should like va1=foo val2=bar or if file @filename")
+    if opts.verbose:
+        constants.verbosity = True
+    halo.aws.halo_aws.vars = vars
+    template = Template()
+    convert_key_to_lower_case(CLASS_MAP)
+    data = load_yaml_from_file(args[0])
+    vvv(data, 'json', "The Raw yaml to dict is:")
+    validate_template(data)
+    template_dict_variables(data, **vars)
+    vvv(data, 'json', "The dict after running throught the templating engine is:")
+
+   # Check for any includes and add them
+    have_includes = False
+    if 'include_resources' in data['template'].keys():
+        flist = []
+        have_includes = True
+        if isinstance(data['template']['include_resources'], basestring):
+            flist.append(data['template']['include_resources'])
+        elif isinstance(data['template']['include_resources'], list):
+            flist = data['template']['include_resources']
+        else:
+            halo_error("Include_resources must have a string or list as values")
+        for i in flist:
+            inc_data = load_yaml_from_file(i)
+            for j in inc_data['template'].keys():
+                for k in inc_data['template'][j]:
+                    data['template'][j].append(k)
+    
+    # If we have include lets revalidate the data and run it through templating engine again.
+    if have_includes:
+        validate_template(data)
+        template_dict_variables(data, **vars)
+        vvv(data, 'json', "The dict after running throught the templating after including vars engine is:")
+    stack_props = data['template']['stack_props']
+    state =  stack_props.get('state', STACK_PROPS_DEFAULTS['state'])
+    rollback =  stack_props.get('rollback', STACK_PROPS_DEFAULTS['rollback'])
+    wait =  stack_props.get('wait', STACK_PROPS_DEFAULTS['wait'])
+    wait_timeout =  stack_props.get('wait_timeout', STACK_PROPS_DEFAULTS['wait_timeout'])
+    region =  stack_props.get('region', STACK_PROPS_DEFAULTS['region'])
+    stack_name =  data['template']['stack_props']['stack_name']
+    if 'creds' in data['template'].keys():
+        aws_access_key =  data['template']['creds']['access_key']
+        aws_secret_key =  data['template']['creds']['secret_key']
+    else:
+        aws_access_key = None
+        aws_secret_key = None
+    conn = connect_aws(aws_access_key, aws_secret_key, region)
+    vvv("Conected to AWS")
+
+    if state == 'present':
+        resources = data['template']['resources']
+        if 'outputs' in data['template'].keys():
+            outputs = data['template']['outputs']
+
+        for i in resources:
+            add_resource_to_template(i, template)
+        
+        if 'outputs' in data['template'].keys():
+            for i in outputs:
+                add_output_to_template(i, template)
+        vvv(json.loads(template.to_json()), 'json', "The AWS template Json is:")
+        result = create_stack(conn, state, template, rollback, stack_name, wait, wait_timeout)
+        print json.dumps(result, indent=4)
+    else:
+        result=stack_delete(conn, state,  stack_name, wait, wait_timeout)
+        print json.dumps(result, indent=4)
+
+

@@ -1,0 +1,83 @@
+{
+   "LifecycleRule": {
+      "'Status'": "(basestring, True),", 
+      "'ExpirationInDays'": "(positive_integer, False),", 
+      "'ExpirationDate'": "(basestring, False),", 
+      "'Id'": "(basestring, False),", 
+      "'Prefix'": "(basestring, False),", 
+      "'Transition'": "(LifecycleRuleTransition, False),"
+   }, 
+   "Bucket": {
+      "'LifecycleConfiguration'": "(LifecycleConfiguration, False),", 
+      "'NotificationConfiguration'": "(NotificationConfiguration, False),", 
+      "'VersioningConfiguration'": "(VersioningConfiguration, False)", 
+      "'LoggingConfiguration'": "(LoggingConfiguration, False),", 
+      "'WebsiteConfiguration'": "(WebsiteConfiguration, False),", 
+      "'CorsConfiguration'": "(CorsConfiguration, False),", 
+      "'BucketName'": "(basestring, False),", 
+      "'Tags'": "(Tags, False),", 
+      "'AccessControl'": "(basestring, False),"
+   }, 
+   "CorsRules": {
+      "'AllowedMethods'": "([basestring], True),", 
+      "'MaxAge'": "(positive_integer, False),", 
+      "'Id'": "(basestring, False),", 
+      "'ExposedHeaders'": "([basestring], False),", 
+      "'AllowedHeaders'": "([basestring], False),", 
+      "'AllowedOrigins'": "([basestring], True),"
+   }, 
+   "CorsConfiguration": {
+      "'CorsRules'": "([CorsRules], True),"
+   }, 
+   "LoggingConfiguration": {
+      "'LogFilePrefix'": "(basestring, False),", 
+      "'DestinationBucketName'": "(basestring, False),"
+   }, 
+   "RedirectAllRequestsTo": {
+      "'Protocol'": "(basestring, False),", 
+      "'HostName'": "(basestring, True),"
+   }, 
+   "TopicConfiguration": {
+      "'Topic'": "(basestring, True),", 
+      "'Event'": "(basestring, True),"
+   }, 
+   "LifecycleRuleTransition": {
+      "'TransitionDate'": "(basestring, False),", 
+      "'TransitionInDays'": "(positive_integer, False),", 
+      "'StorageClass'": "(basestring, True),"
+   }, 
+   "RedirectRule": {
+      "'Protocol'": "(basestring, False),", 
+      "'HostName'": "(basestring, False),", 
+      "'ReplaceKeyPrefixWith'": "(basestring, False),", 
+      "'HttpRedirectCode'": "(basestring, False),", 
+      "'ReplaceKeyWith'": "(basestring, False),"
+   }, 
+   "RoutingRuleCondition": {
+      "'HttpErrorCodeReturnedEquals'": "(basestring, False),", 
+      "'KeyPrefixEquals'": "(basestring, False),"
+   }, 
+   "LifecycleConfiguration": {
+      "'Rules'": "([LifecycleRule], True),"
+   }, 
+   "VersioningConfiguration": {
+      "'Status'": "(basestring, False),"
+   }, 
+   "BucketPolicy": {
+      "'Bucket'": "(basestring, True),", 
+      "'PolicyDocument'": "(policytypes, True),"
+   }, 
+   "WebsiteConfiguration": {
+      "'ErrorDocument'": "(basestring, False),", 
+      "'RedirectAllRequestsTo'": "(RedirectAllRequestsTo, False),", 
+      "'RoutingRules'": "([RoutingRule], False),", 
+      "'IndexDocument'": "(basestring, False),"
+   }, 
+   "RoutingRule": {
+      "'RoutingRuleCondition'": "(RoutingRuleCondition, False),", 
+      "'RedirectRule'": "(RedirectRule, True),"
+   }, 
+   "NotificationConfiguration": {
+      "'TopicConfigurations'": "([TopicConfiguration], True),"
+   }
+}

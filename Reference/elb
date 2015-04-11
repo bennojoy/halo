@@ -1,0 +1,63 @@
+{
+   "AppCookieStickinessPolicy": {
+      "'PolicyName'": "(basestring, True),", 
+      "'CookieName'": "(basestring, True),"
+   }, 
+   "ConnectionDrainingPolicy": {
+      "'Enabled'": "(bool, True),", 
+      "'Timeout'": "(int, False)"
+   }, 
+   "AccessLoggingPolicy": {
+      "'Enabled'": "(bool, True),", 
+      "'S3BucketPrefix'": "(basestring, False),", 
+      "'S3BucketName'": "(basestring, False),", 
+      "'EmitInterval'": "(int, False),"
+   }, 
+   "HealthCheck": {
+      "'HealthyThreshold'": "(integer_range(2, 10), True),", 
+      "'UnhealthyThreshold'": "(integer_range(2, 10), True),", 
+      "'Interval'": "(positive_integer, True),", 
+      "'Timeout'": "(positive_integer, True),", 
+      "'Target'": "(basestring, True),"
+   }, 
+   "LBCookieStickinessPolicy": {
+      "'CookieExpirationPeriod'": "(basestring, False),", 
+      "'PolicyName'": "(basestring, False),"
+   }, 
+   "Listener": {
+      "'SSLCertificateId'": "(basestring, False),", 
+      "'InstancePort'": "(network_port, True),", 
+      "'PolicyNames'": "(list, False),", 
+      "'LoadBalancerPort'": "(network_port, True),", 
+      "'InstanceProtocol'": "(basestring, False),", 
+      "'Protocol'": "(basestring, True),"
+   }, 
+   "ConnectionSettings": {
+      "'IdleTimeout'": "(int, True),"
+   }, 
+   "Policy": {
+      "'InstancePorts'": "(list, False),", 
+      "'PolicyName'": "(basestring, True),", 
+      "'PolicyType'": "(basestring, True),", 
+      "'LoadBalancerPorts'": "(list, False),", 
+      "'Attributes'": "([dict], False),"
+   }, 
+   "LoadBalancer": {
+      "'Scheme'": "(basestring, False),", 
+      "'LoadBalancerName'": "(basestring, False),", 
+      "'AppCookieStickinessPolicy'": "(list, False),", 
+      "'Listeners'": "(list, True),", 
+      "'HealthCheck'": "(HealthCheck, False),", 
+      "'CrossZone'": "(boolean, False),", 
+      "'Instances'": "(list, False),", 
+      "'ConnectionDrainingPolicy'": "(ConnectionDrainingPolicy, False),", 
+      "'Tags'": "(list, False),", 
+      "'SecurityGroups'": "(list, False),", 
+      "'AvailabilityZones'": "(list, False),", 
+      "'LBCookieStickinessPolicy'": "(list, False),", 
+      "'ConnectionSettings'": "(ConnectionSettings, False),", 
+      "'AccessLoggingPolicy'": "(AccessLoggingPolicy, False),", 
+      "'Policies'": "(list, False),", 
+      "'Subnets'": "(list, False),"
+   }
+}

@@ -1,0 +1,16 @@
+PYTHONPATH=${PYTHONPATH-""}
+PATH=${PATH-""}
+if [ -n "$BASH_SOURCE" ] ; then
+    HACKING_DIR=$(dirname "$BASH_SOURCE")
+elif [ $(basename -- "$0") = "env-setup" ]; then
+    HACKING_DIR=$(dirname "$0")
+fi
+FULL_PATH=$(python -c "import os; print(os.path.realpath('$HACKING_DIR'))")
+HALO_HOME=$(dirname "$FULL_PATH")
+
+PREFIX_PYTHONPATH="$HALO_HOME/halo"
+PREFIX_PATH="$HALO_HOME/bin"
+PREFIX_MANPATH="$HALO_HOME/docs/man"
+
+expr "$PYTHONPATH" : "${PREFIX_PYTHONPATH}.*" > /dev/null || export PYTHONPATH="$PREFIX_PYTHONPATH:$PYTHONPATH"
+expr "$PATH" : "${PREFIX_PATH}.*" > /dev/null || export PATH="$PREFIX_PATH:$PATH"

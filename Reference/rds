@@ -1,0 +1,62 @@
+{
+   "DBSecurityGroupIngress": {
+      "'EC2SecurityGroupId'": "(basestring, False),", 
+      "'CIDRIP'": "(basestring, False),", 
+      "'EC2SecurityGroupOwnerId'": "(basestring, False),", 
+      "'EC2SecurityGroupName'": "(basestring, False),", 
+      "'DBSecurityGroupName'": "(basestring, True),"
+   }, 
+   "DBSecurityGroup": {
+      "'DBSecurityGroupIngress'": "(list, True),", 
+      "'GroupDescription'": "(basestring, True),", 
+      "'EC2VpcId'": "(basestring, False),", 
+      "'Tags'": "(list, False),"
+   }, 
+   "RDSSecurityGroup": {
+      "'EC2SecurityGroupId'": "(basestring, False),", 
+      "'CIDRIP'": "(basestring, False),", 
+      "'EC2SecurityGroupOwnerId'": "(basestring, False),", 
+      "'EC2SecurityGroupName'": "(basestring, False),"
+   }, 
+   "DBSubnetGroup": {
+      "'Tags'": "(list, False),", 
+      "'DBSubnetGroupDescription'": "(basestring, True),", 
+      "'SubnetIds'": "(list, True),"
+   }, 
+   "DBParameterGroup": {
+      "'Tags'": "(list, False),", 
+      "'Parameters'": "(dict, False),", 
+      "'Description'": "(basestring, False),", 
+      "'Family'": "(basestring, False),"
+   }, 
+   "DBInstance": {
+      "'PreferredMaintenanceWindow'": "(basestring, False),", 
+      "'AvailabilityZone'": "(basestring, False),", 
+      "'Iops'": "(int, False),", 
+      "'DBName'": "(basestring, False),", 
+      "'StorageType'": "(basestring, False),", 
+      "'VPCSecurityGroups'": "([basestring, AWSHelperFn], False),", 
+      "'Engine'": "(basestring, True),", 
+      "'MultiAZ'": "(boolean, False),", 
+      "'LicenseModel'": "(basestring, False),", 
+      "'PubliclyAccessible'": "(boolean, False),", 
+      "'DBInstanceClass'": "(basestring, True),", 
+      "'DBInstanceIdentifier'": "(basestring, False),", 
+      "'Port'": "(network_port, False),", 
+      "'MasterUserPassword'": "(basestring, False),", 
+      "'EngineVersion'": "(basestring, False),", 
+      "'OptionGroupName'": "(basestring, False),", 
+      "'PreferredBackupWindow'": "(basestring, False),", 
+      "'AutoMinorVersionUpgrade'": "(boolean, False),", 
+      "'AllowMajorVersionUpgrade'": "(boolean, False),", 
+      "'AllocatedStorage'": "(positive_integer, True),", 
+      "'SourceDBInstanceIdentifier'": "(basestring, False),", 
+      "'Tags'": "(list, False),", 
+      "'DBSecurityGroups'": "(list, False),", 
+      "'MasterUsername'": "(basestring, False),", 
+      "'BackupRetentionPeriod'": "(positive_integer, False),", 
+      "'DBSnapshotIdentifier'": "(basestring, False),", 
+      "'DBSubnetGroupName'": "(basestring, False),", 
+      "'DBParameterGroupName'": "(basestring, False),"
+   }
+}

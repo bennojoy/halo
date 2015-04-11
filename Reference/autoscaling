@@ -1,0 +1,86 @@
+{
+   "BlockDeviceMapping": {
+      "'NoDevice'": "(boolean, False),", 
+      "'DeviceName'": "(basestring, True),", 
+      "'Ebs'": "(EBSBlockDevice, False),", 
+      "'VirtualName'": "(basestring, False),"
+   }, 
+   "ScalingPolicy": {
+      "'AdjustmentType'": "(basestring, True),", 
+      "'AutoScalingGroupName'": "(basestring, True),", 
+      "'Cooldown'": "(integer, False),", 
+      "'ScalingAdjustment'": "(basestring, True),"
+   }, 
+   "ScheduledAction": {
+      "'StartTime'": "(basestring, False),", 
+      "'MinSize'": "(integer, False),", 
+      "'Recurrence'": "(basestring, False),", 
+      "'EndTime'": "(basestring, False),", 
+      "'MaxSize'": "(integer, False),", 
+      "'AutoScalingGroupName'": "(basestring, True),", 
+      "'DesiredCapacity'": "(integer, False),"
+   }, 
+   "AutoScalingGroup": {
+      "'NotificationConfiguration'": "(NotificationConfiguration, False),", 
+      "'HealthCheckGracePeriod'": "(int, False),", 
+      "'PlacementGroup'": "(basestring, False),", 
+      "'LoadBalancerNames'": "(list, False),", 
+      "'LaunchConfigurationName'": "(basestring, False),", 
+      "'TerminationPolicies'": "([basestring], False),", 
+      "'MinSize'": "(integer, True),", 
+      "'VPCZoneIdentifier'": "(list, False),", 
+      "'InstanceId'": "(basestring, False),", 
+      "'AvailabilityZones'": "(list, True),", 
+      "'MaxSize'": "(integer, True),", 
+      "'Cooldown'": "(integer, False),", 
+      "'MetricsCollection'": "([MetricsCollection], False),", 
+      "'HealthCheckType'": "(basestring, False),", 
+      "'DesiredCapacity'": "(integer, False),"
+   }, 
+   "Trigger": {
+      "'MetricName'": "(basestring, True),", 
+      "'Period'": "(integer, True),", 
+      "'LowerBreachScaleIncrement'": "(integer, False),", 
+      "'UpperThreshold'": "(integer, True),", 
+      "'Namespace'": "(basestring, True),", 
+      "'UpperBreachScaleIncrement'": "(integer, False),", 
+      "'BreachDuration'": "(integer, True),", 
+      "'Statistic'": "(basestring, True),", 
+      "'LowerThreshold'": "(integer, True),", 
+      "'Unit'": "(basestring, False),", 
+      "'Dimensions'": "(list, True),", 
+      "'AutoScalingGroupName'": "(basestring, True),"
+   }, 
+   "MetricsCollection": {
+      "'Metrics'": "(list, False),", 
+      "'Granularity'": "(basestring, True),"
+   }, 
+   "NotificationConfiguration": {
+      "'NotificationTypes'": "(list, True),", 
+      "'TopicARN'": "(basestring, True),"
+   }, 
+   "LaunchConfiguration": {
+      "'BlockDeviceMappings'": "(list, False),", 
+      "'InstanceType'": "(basestring, True),", 
+      "'EbsOptimized'": "(boolean, False),", 
+      "'IamInstanceProfile'": "(basestring, False),", 
+      "'KernelId'": "(basestring, False),", 
+      "'ImageId'": "(basestring, True),", 
+      "'InstanceMonitoring'": "(boolean, False),", 
+      "'SpotPrice'": "(basestring, False),", 
+      "'UserData'": "(basestring, False),", 
+      "'AssociatePublicIpAddress'": "(boolean, False),", 
+      "'InstanceId'": "(basestring, False),", 
+      "'KeyName'": "(basestring, False),", 
+      "'SecurityGroups'": "(list, False),", 
+      "'RamDiskId'": "(basestring, False),", 
+      "'Metadata'": "(Metadata, False),"
+   }, 
+   "EBSBlockDevice": {
+      "'DeleteOnTermination'": "(boolean, False),", 
+      "'SnapshotId'": "(basestring, False),", 
+      "'VolumeType'": "(basestring, False),", 
+      "'VolumeSize'": "(integer, False),", 
+      "'Iops'": "(integer, False),"
+   }
+}

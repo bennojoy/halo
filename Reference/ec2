@@ -1,0 +1,237 @@
+{
+   "VPCGatewayAttachment": {
+      "'VpnGatewayId'": "(basestring, False),", 
+      "'InternetGatewayId'": "(basestring, False),", 
+      "'VpcId'": "(basestring, True),"
+   }, 
+   "EIP": {
+      "'InstanceId'": "(basestring, False),", 
+      "'Domain'": "(basestring, False),"
+   }, 
+   "NetworkAcl": {
+      "'Tags'": "(list, False),", 
+      "'VpcId'": "(basestring, True),"
+   }, 
+   "Subnet": {
+      "'Tags'": "(list, False),", 
+      "'CidrBlock'": "(basestring, True),", 
+      "'AvailabilityZone'": "(basestring, False),", 
+      "'VpcId'": "(basestring, True),"
+   }, 
+   "NetworkInterfaceAttachment": {
+      "'DeleteOnTermination'": "(boolean, False),", 
+      "'DeviceIndex'": "(integer, True),", 
+      "'InstanceId'": "(basestring, True),", 
+      "'NetworkInterfaceId'": "(basestring, True),"
+   }, 
+   "PrivateIpAddressSpecification": {
+      "'PrivateIpAddress'": "(basestring, True),", 
+      "'Primary'": "(boolean, True),"
+   }, 
+   "SecurityGroupEgress": {
+      "'IpProtocol'": "(basestring, True),", 
+      "'FromPort'": "(network_port, True),", 
+      "'GroupId'": "(basestring, True),", 
+      "'ToPort'": "(network_port, True),", 
+      "'CidrIp'": "(basestring, False),", 
+      "'SourceSecurityGroupId'": "(basestring, False),", 
+      "'DestinationSecurityGroupId'": "(basestring, False),"
+   }, 
+   "SecurityGroup": {
+      "'SecurityGroupIngress'": "(list, False),", 
+      "'Tags'": "(list, False),", 
+      "'GroupDescription'": "(basestring, True),", 
+      "'VpcId'": "(basestring, False),", 
+      "'SecurityGroupEgress'": "(list, False),"
+   }, 
+   "Instance": {
+      "'BlockDeviceMappings'": "(list, False),", 
+      "'SourceDestCheck'": "(boolean, False),", 
+      "'EbsOptimized'": "(boolean, False),", 
+      "'RamdiskId'": "(basestring, False),", 
+      "'AvailabilityZone'": "(basestring, False),", 
+      "'Tags'": "(list, False),", 
+      "'IamInstanceProfile'": "(basestring, False),", 
+      "'KernelId'": "(basestring, False),", 
+      "'ImageId'": "(basestring, True),", 
+      "'InstanceInitiatedShutdownBehavior'": "(basestring, False),", 
+      "'Monitoring'": "(boolean, False),", 
+      "'Tenancy'": "(basestring, False),", 
+      "'PlacementGroupName'": "(basestring, False),", 
+      "'KeyName'": "(basestring, False),", 
+      "'InstanceType'": "(basestring, False),", 
+      "'DisableApiTermination'": "(boolean, False),", 
+      "'NetworkInterfaces'": "([NetworkInterfaceProperty], False),", 
+      "'SecurityGroupIds'": "(list, False),", 
+      "'UserData'": "(basestring, False),", 
+      "'SecurityGroups'": "(list, False),", 
+      "'SubnetId'": "(basestring, False),", 
+      "'Volumes'": "(list, False),", 
+      "'PrivateIpAddress'": "(basestring, False),"
+   }, 
+   "VPCPeeringConnection": {
+      "'Tags'": "(list, False),", 
+      "'PeerVpcId'": "(basestring, True),", 
+      "'VpcId'": "(basestring, True),"
+   }, 
+   "InternetGateway": {
+      "'Tags'": "(list, False),"
+   }, 
+   "MountPoint": {
+      "'Device'": "(basestring, True),", 
+      "'VolumeId'": "(basestring, True),"
+   }, 
+   "NetworkAclEntry": {
+      "'NetworkAclId'": "(basestring, True),", 
+      "'Egress'": "(boolean, True),", 
+      "'CidrBlock'": "(basestring, True),", 
+      "'Protocol'": "(network_port, True),", 
+      "'RuleNumber'": "(integer_range(1, 32766), True),", 
+      "'RuleAction'": "(basestring, True),"
+   }, 
+   "VPNConnection": {
+      "'CustomerGatewayId'": "(basestring, True),", 
+      "'VpnGatewayId'": "(basestring, True),", 
+      "'Type'": "(basestring, True),", 
+      "'StaticRoutesOnly'": "(boolean, False),", 
+      "'Tags'": "(list, False),"
+   }, 
+   "Volume": {
+      "'SnapshotId'": "(basestring, False),", 
+      "'Tags'": "(list, False),", 
+      "'Size'": "(basestring, False),", 
+      "'AvailabilityZone'": "(basestring, True),", 
+      "'Iops'": "(int, False),", 
+      "'Encrypted'": "(boolean, False),", 
+      "'VolumeType'": "(basestring, False),"
+   }, 
+   "EIPAssociation": {
+      "'AllocationId'": "(basestring, False),", 
+      "'InstanceId'": "(basestring, False),", 
+      "'PrivateIpAddress'": "(basestring, False),", 
+      "'NetworkInterfaceId'": "(basestring, False),", 
+      "'EIP'": "(basestring, False),"
+   }, 
+   "DHCPOptions": {
+      "'Tags'": "(list, False),", 
+      "'NetbiosNameServers'": "(list, False),", 
+      "'NtpServers'": "(list, False),", 
+      "'DomainName'": "(basestring, False),", 
+      "'NetbiosNodeType'": "(int, False),", 
+      "'DomainNameServers'": "(list, False),"
+   }, 
+   "SecurityGroupIngress": {
+      "'IpProtocol'": "(basestring, True),", 
+      "'FromPort'": "(network_port, False),", 
+      "'GroupId'": "(basestring, False),", 
+      "'ToPort'": "(network_port, False),", 
+      "'CidrIp'": "(basestring, False),", 
+      "'SourceSecurityGroupName'": "(basestring, False),", 
+      "'SourceSecurityGroupId'": "(basestring, False),", 
+      "'GroupName'": "(basestring, False),", 
+      "'SourceSecurityGroupOwnerId'": "(basestring, False),"
+   }, 
+   "VPNGatewayRoutePropagation": {
+      "'VpnGatewayId'": "(basestring, True),", 
+      "'RouteTableIds'": "([basestring, Ref], True),"
+   }, 
+   "SecurityGroupRule": {
+      "'IpProtocol'": "(basestring, True),", 
+      "'FromPort'": "(network_port, True),", 
+      "'ToPort'": "(network_port, True),", 
+      "'CidrIp'": "(basestring, False),", 
+      "'SourceSecurityGroupId'": "(basestring, False),", 
+      "'DestinationSecurityGroupId'": "(basestring, False),", 
+      "'SourceSecurityGroupName'": "(basestring, False),", 
+      "'SourceSecurityGroupOwnerId'": "(basestring, False),"
+   }, 
+   "VPC": {
+      "'InstanceTenancy'": "(basestring, False),", 
+      "'EnableDnsSupport'": "(boolean, False),", 
+      "'EnableDnsHostnames'": "(boolean, False),", 
+      "'CidrBlock'": "(basestring, True),", 
+      "'Tags'": "(list, False),"
+   }, 
+   "VPNGateway": {
+      "'Tags'": "(list, False),", 
+      "'Type'": "(basestring, True),"
+   }, 
+   "VPCDHCPOptionsAssociation": {
+      "'DhcpOptionsId'": "(basestring, True),", 
+      "'VpcId'": "(basestring, True),"
+   }, 
+   "BlockDeviceMapping": {
+      "'NoDevice'": "(dict, False),", 
+      "'DeviceName'": "(basestring, True),"
+   }, 
+   "VPNConnectionRoute": {
+      "'VpnConnectionId'": "(basestring, True),", 
+      "'DestinationCidrBlock'": "(basestring, True),"
+   }, 
+   "NetworkInterfaceProperty": {
+      "'Description'": "(basestring, False),", 
+      "'DeleteOnTermination'": "(boolean, False),", 
+      "'AssociatePublicIpAddress'": "(boolean, False),", 
+      "'DeviceIndex'": "(integer, True),", 
+      "'PrivateIpAddress'": "(basestring, False),", 
+      "'SubnetId'": "(basestring, False),", 
+      "'SecondaryPrivateIpAddressCount'": "(int, False),", 
+      "'PrivateIpAddresses'": "([PrivateIpAddressSpecification], False),", 
+      "'GroupSet'": "([basestring, FindInMap, Ref], False),", 
+      "'NetworkInterfaceId'": "(basestring, False),"
+   }, 
+   "PortRange": {
+      "'From'": "(network_port, False),", 
+      "'To'": "(network_port, False),"
+   }, 
+   "Route": {
+      "'GatewayId'": "(basestring, False),", 
+      "'RouteTableId'": "(basestring, True),", 
+      "'InstanceId'": "(basestring, False),", 
+      "'NetworkInterfaceId'": "(basestring, False),", 
+      "'DestinationCidrBlock'": "(basestring, True),", 
+      "'VpcPeeringConnectionId'": "(basestring, False),"
+   }, 
+   "CustomerGateway": {
+      "'IpAddress'": "(basestring, True),", 
+      "'Tags'": "(list, False),", 
+      "'Type'": "(basestring, True),", 
+      "'BgpAsn'": "(integer, True),"
+   }, 
+   "NetworkInterface": {
+      "'SourceDestCheck'": "(boolean, False),", 
+      "'Description'": "(basestring, False),", 
+      "'Tags'": "(list, False),", 
+      "'SubnetId'": "(basestring, True),", 
+      "'SecondaryPrivateIpAddressCount'": "(int, False),", 
+      "'PrivateIpAddresses'": "([PrivateIpAddressSpecification], False),", 
+      "'GroupSet'": "(list, False),", 
+      "'PrivateIpAddress'": "(basestring, False),"
+   }, 
+   "SubnetNetworkAclAssociation": {
+      "'SubnetId'": "(basestring, True),", 
+      "'NetworkAclId'": "(basestring, True),"
+   }, 
+   "ICMP": {
+      "'Type'": "(int, False),", 
+      "'Code'": "(int, False),"
+   }, 
+   "SubnetRouteTableAssociation": {
+      "'SubnetId'": "(basestring, True),", 
+      "'RouteTableId'": "(basestring, True),"
+   }, 
+   "VolumeAttachment": {
+      "'InstanceId'": "(basestring, True),", 
+      "'Device'": "(basestring, True),", 
+      "'VolumeId'": "(basestring, True),"
+   }, 
+   "RouteTable": {
+      "'Tags'": "(list, False),", 
+      "'VpcId'": "(basestring, True),"
+   }, 
+   "EBSBlockDevice": {
+      "'DeleteOnTermination'": "(boolean, False),", 
+      "'VolumeType'": "(basestring, False),", 
+      "'Encrypted'": "(boolean, False),"
+   }
+}

@@ -1,0 +1,14 @@
+---
+
+template:
+ resources:
+    - type: subnet
+      name: subnet2
+      CidrBlock: '10.0.1.0/24'
+      VpcId: ref({{ vpc_name }})
+      Tags:
+       nem: getatt({{ vpc_name }}, DefaultNetworkAcl)
+ outputs:
+    - name: ben1
+      Description: foobar1
+      Value: getatt({{ vpc_name}}, DefaultNetworkAcl)

@@ -1,0 +1,5 @@
+stack_name: benz
+vpc_name: benz1
+image_id: ami-8997afe0
+cidr_block: "10.0.0.0/16"
+subnet_cidr: "10.0.5.0/24"

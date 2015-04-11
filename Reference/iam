@@ -1,0 +1,41 @@
+{
+   "Group": {
+      "'Policies'": "([Policy], False),", 
+      "'Path'": "(basestring, False),"
+   }, 
+   "AccessKey": {
+      "'Status'": "(basestring, False),", 
+      "'UserName'": "(basestring, True),", 
+      "'Serial'": "(integer, False),"
+   }, 
+   "UserToGroupAddition": {
+      "'GroupName'": "(basestring, True),", 
+      "'Users'": "(list, True),"
+   }, 
+   "InstanceProfile": {
+      "'Roles'": "(list, True),", 
+      "'Path'": "(basestring, True),"
+   }, 
+   "PolicyType": {
+      "'Groups'": "([basestring, Ref], False),", 
+      "'Users'": "([basestring, Ref], False),", 
+      "'PolicyDocument'": "(policytypes, True),", 
+      "'Roles'": "([basestring, Ref], False),", 
+      "'PolicyName'": "(basestring, True),"
+   }, 
+   "User": {
+      "'Groups'": "([basestring, Ref], False),", 
+      "'Policies'": "([Policy], False),", 
+      "'LoginProfile'": "(LoginProfile, False),", 
+      "'Path'": "(basestring, False),"
+   }, 
+   "Policy": {
+      "'PolicyDocument'": "(policytypes, True),", 
+      "'PolicyName'": "(basestring, True),"
+   }, 
+   "Role": {
+      "'AssumeRolePolicyDocument'": "(policytypes, True),", 
+      "'Policies'": "([Policy], False),", 
+      "'Path'": "(basestring, True),"
+   }
+}

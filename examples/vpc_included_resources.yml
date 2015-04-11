@@ -1,0 +1,38 @@
+---
+
+template:
+ stack_props:
+   state: present
+   region: us-east-1
+   rollback: no
+   stack_name: "{{ stack_name }}"
+   wait: yes
+   wait_timeout: 280
+ resources:
+    - type: vpc
+      name: "{{ vpc_name }}"
+      CidrBlock: "{{ cidr_block }}"
+      Tags: 
+        application: myapp
+        Name: joy
+    - type: subnet
+      name: subnet1 
+      CidrBlock: "{{ subnet_cidr }}"
+      VpcId: ref({{ vpc_name }})
+      Tags:
+       Name: "Mysubnet1"
+    - type: instance
+      name: myinstance
+      InstanceType: "t1.micro"
+      KeyName: benkey
+      ImageId: '{{ image_id }}'
+      SubnetId: ref(subnet1)
+      Tags:
+        Name: "Ben_hello"
+ outputs:
+    - name: InstanceIP
+      Description: IP of the Instance
+      Value: getatt(myinstance, PrivateIp)
+ include_resources: 
+   - examples/resources/subnet.yml
+   
