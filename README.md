@@ -182,4 +182,26 @@ template:
 
 
 
+### Notes
+-------------------
 
+
+All the resources that can be created in the templates are listed in the references folder under thier respective groups. So for example if we need to create a vpc we need to define the  'type: vpc' a "name: foo" and the diffrent properties of a vpc.
+The type vpc and the diffrent properties that it accepts are listed in references/ec2 as follows:
+
+```
+
+"VPC": {
+      "'InstanceTenancy'": "(basestring, False),", 
+      "'EnableDnsSupport'": "(boolean, False),", 
+      "'EnableDnsHostnames'": "(boolean, False),", 
+      "'CidrBlock'": "(basestring, True),", 
+      "'Tags'": "(list, False),"
+   }, 
+
+
+```
+
+Please note the properties are case senstive so please do make sure the case matches in the template.
+
+ 
